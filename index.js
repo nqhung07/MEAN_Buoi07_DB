@@ -56,8 +56,8 @@ app.get("/save",function(req,res){
 })
 
 //
-app.get("/sv",function(req,res){
-    SinhVien.find(function(err,ds){
+app.get("/sv/:id",function(req,res){
+    SinhVien.find({NamSinh:req.params.id},function(err,ds){
         if (err){
             console.log("find sv",err);
             res.json({"kq":0})
