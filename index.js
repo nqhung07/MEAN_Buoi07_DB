@@ -12,10 +12,30 @@ app.use(express.static('public'))
 var bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: false }))
 
+//mongoose
+const mongoose = require('mongoose');
+mongoose.connect('mongodb+srv://admin:admin@cluster0-qkovx.mongodb.net/buoi01?retryWrites=true&w=majority', { useNewUrlParser: true }, function (err) {
+    if (err) {
+        console.log("connect err", err)
+    } else {
+        console.log("connect success")
+    }
+}
+);
+
 //port 
 app.listen(3000)
 
-app.get('/',function(req,res){
+// //variable
+// var sinhvienSchema = new mongoose.Schema({
+//     HoTen: String,
+//     NamSinh: Number
+// });
+
+// // create model
+// var SinhVien = mongoose.model("SinhVien",sinhvienSchema)
+
+app.get('/', function (req, res) {
     // res.send('hello')
     res.render('home')
 })
