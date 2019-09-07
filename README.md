@@ -17,4 +17,10 @@ In Node.js
 2. $bien : teo
 3. $bien.save(): teo.save()
 
-Check in cluster0 ->collection: sinhviens
+Check in cluster0 ->collection: sinhviens with _id create auto
+
+* Query
+
+$ Model.find(function(err,results){
+
+})

@@ -55,6 +55,19 @@ app.get("/save",function(req,res){
     
 })
 
+//
+app.get("/sv",function(req,res){
+    SinhVien.find(function(err,ds){
+        if (err){
+            console.log("find sv",err);
+            res.json({"kq":0})
+        } else {
+            console.log("find sv success");
+            res.json(ds)
+        }
+    })
+})
+
 app.get('/', function (req, res) {
     // res.send('hello')
     res.render('home')
