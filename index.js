@@ -27,13 +27,14 @@ mongoose.connect('mongodb+srv://admin:admin@cluster0-qkovx.mongodb.net/buoi01?re
 app.listen(3000)
 
 //variable
-var sinhvienSchema = new mongoose.Schema({
-    HoTen: String,
-    NamSinh: Number
-});
+// var sinhvienSchema = new mongoose.Schema({
+//     HoTen: String,
+//     NamSinh: Number
+// });
 
 // create model
-var SinhVien = mongoose.model("SinhVien",sinhvienSchema)
+// var SinhVien = mongoose.model("SinhVien",sinhvienSchema)
+var SinhVien = require('./models/sinhvien')
 
 //save to mongoDB
 app.get("/save",function(req,res){
