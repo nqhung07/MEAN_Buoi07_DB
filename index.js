@@ -26,14 +26,33 @@ mongoose.connect('mongodb+srv://admin:admin@cluster0-qkovx.mongodb.net/buoi01?re
 //port 
 app.listen(3000)
 
-// //variable
-// var sinhvienSchema = new mongoose.Schema({
-//     HoTen: String,
-//     NamSinh: Number
-// });
+//variable
+var sinhvienSchema = new mongoose.Schema({
+    HoTen: String,
+    NamSinh: Number
+});
 
-// // create model
-// var SinhVien = mongoose.model("SinhVien",sinhvienSchema)
+// create model
+var SinhVien = mongoose.model("SinhVien",sinhvienSchema)
+
+//save to mongoDB
+app.get("/save",function(req,res){
+    var teo = new SinhVien({
+        HoTen: "Nguyen Hung",
+        NamSinh: 1985
+    })
+    console.log("teo: ", teo);
+    teo.save(function(err){
+        if (err) {
+            console.log("save err",err);
+            res.json({"kq":0})
+        } else {
+            console.log("save success");
+            res.json({"kq":1})
+        }      
+    })
+    
+})
 
 app.get('/', function (req, res) {
     // res.send('hello')

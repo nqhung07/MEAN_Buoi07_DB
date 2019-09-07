@@ -11,8 +11,10 @@ $ npm i mongoose
 
 * Add model to mongoDB:
 
-In Node
+In Node.js
 
-1. modelSV
-2. $bien
-3. $bien.save()
+1. modelSV: SinhVien
+2. $bien : teo
+3. $bien.save(): teo.save()
+
+Check in cluster0 ->collection: sinhviens
